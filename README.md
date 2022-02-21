@@ -2,8 +2,13 @@
 
 - Make a python virtual environment
     - macOS
-        - `python3.9 -m venv venv` (non-m1 mac computer)
-        - `python3.9-intel64 -m venv venv` (m1 mac computer)
+        - using blender's python:
+        - using a standard python install:
+            - `python3.9 -m venv venv` (non-m1 mac computer)
+            - `python3.9-intel64 -m venv venv` (m1 mac computer)
+    - windows (in git bash)
+        - `alias b3d_python="/c/Program\ Files/Blender\ Foundation/Blender\ 3.0/3.0/python/bin/python.exe"`
+        - `b3d_python -m venv venv`
 
 - ⚠️ Activate the environment ⚠️
     - macOS
@@ -20,6 +25,8 @@
 - Install coldtype into the Blender python installation
     - macOS
         - `/Applications/Blender.app/Contents/Resources/X.XX/python/bin/python3.9 -m pip install "coldtype[viewer]" --upgrade`
+    - windows:
+        - `b3d_python -m pip install "coldtype[viewer]"
 
 - Run example in 2D mode:
     - `coldtype nowin3d.py`

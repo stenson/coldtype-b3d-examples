@@ -16,7 +16,7 @@ def varfont2(f):
                     .e("seio", 1,
                         rng=(0.1, 1.75)))))))
     
-    three = (StSt("Now in 3D!", "Kass-MediumItalic", 100)
+    three = (StSt("Now in 3D!", Font.RecursiveMono(), 100)
         .align(f.a.r.take(0.2, "S"))
         .pen()
         .f(hsl(0.65, f.e("eeio", 1), 0.6))
