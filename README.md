@@ -1,8 +1,11 @@
 - Install a Python3.9
+    - There are lots (too many) ways to do this. If you’re goal is to use Coldtype with Blender and you don’t already have a python3.9, it is possible to use the embedded python3.9 that comes with Blender to create a virtual environment for non-Blender work.
 
 - Make a python virtual environment
     - macOS
         - using blender's python:
+            - `alias b3d_python="/Applications/Blender.app/Contents/Resources/X.XX/python/bin/python3.9"` (the X.XX will need to change depending on the exact version you have, it might be 3.0.1 as of this writing)
+            - `b3d_python -m venv venv`
         - using a standard python install:
             - `python3.9 -m venv venv` (non-m1 mac computer)
             - `python3.9-intel64 -m venv venv` (m1 mac computer)
@@ -25,6 +28,7 @@
 - Install coldtype into the Blender python installation
     - macOS
         - `/Applications/Blender.app/Contents/Resources/X.XX/python/bin/python3.9 -m pip install "coldtype[viewer]" --upgrade`
+        - Or just `b3d_python -m pip install "coldtype[viewer]" --upgrade` if you did the `alias b3d_python=...` step above
     - windows:
         - `b3d_python -m pip install "coldtype[viewer]"
 
