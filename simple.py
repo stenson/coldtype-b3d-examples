@@ -7,5 +7,6 @@ def simple(f):
         , wdth=f.e("eeio"))
         .align(f.a.r)
         .pen()
+        .tag("letters")
         .ch(b3d(lambda bp: bp
             .extrude(f.e("eeio", r=(0.25, 5))))))

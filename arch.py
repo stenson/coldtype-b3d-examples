@@ -5,8 +5,7 @@ from coldtype.blender import *
 def setup(bw:BpyWorld):
     with (bw.deletePrevious()
         .timeline(Timeline(90))
-        .rigidbody(3, 300)
-        ):
+        .rigidbody(3, 300)):
         (BpyObj.Find("Cube")
             .rigidbody("passive", friction=1, bounce=0))
 
