@@ -1,7 +1,7 @@
 from coldtype import *
 from coldtype.blender import *
 
-tl = Timeline(120)
+tl = Timeline(90)
 
 @b3d_runnable()
 def setup(bw:BpyWorld):
@@ -10,13 +10,13 @@ def setup(bw:BpyWorld):
         .rigidbody(3, 300)
         ):
         (BpyObj.Find("Plane")
-            .rigidbody("passive", friction=0.5, bounce=0.2))
+            .rigidbody("passive", friction=0.5, bounce=0.15))
 
 @b3d_renderable(reset_to_zero=1)
 def falling(r):
-    return (StSt("ABC", Font.MutatorSans(), 500)
+    return (StSt("ABC", Font.MutatorSans(), 500, tu=0)
         .align(r)
-        .t(5, 85)
+        #.t(5, 85)
         .mapv(lambda i, p: p
             .tag(f"glyph_{i}")
             .ch(b3d(lambda bp: bp
