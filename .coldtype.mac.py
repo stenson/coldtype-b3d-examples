@@ -1,0 +1,1 @@
+BLENDER_APP_PATH = "~/Desktop/Blenders/Blender3.1.app"

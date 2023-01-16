@@ -3,11 +3,21 @@ from coldtype.blender import *
 
 @b3d_runnable()
 def setup(bw:BpyWorld):
+    BpyObj.Find("Cube").delete()
+    BpyObj.Find("Light").locate(y=-5)
+    BpyObj.Find("Camera").locate(0,-20,5).rotate(90,0,0)
+
     with (bw.deletePrevious()
+        .render_settings(32, False, Rect(1080, 1080))
         .timeline(Timeline(90))
-        .rigidbody(3, 300)):
-        (BpyObj.Find("Cube")
-            .rigidbody("passive", friction=1, bounce=0))
+        .rigidbody(2.5, 300)
+        ):
+        (BpyObj.Cube("Floor")
+            .scale(x=10, y=10, z=0.2)
+            .locate(z=1.65)
+            .applyScale()
+            .rigidbody("passive", friction=1, bounce=0)
+            .material("floor-material"))
 
 @b3d_renderable(reset_to_zero=1, upright=1, center=(0, 1))
 def arch(r):

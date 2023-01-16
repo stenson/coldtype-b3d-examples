@@ -1,6 +1,21 @@
 from coldtype import *
 from coldtype.blender import *
 
+@b3d_runnable()
+def setup(bw:BpyWorld):
+    BpyObj.Find("Cube").delete()
+    
+    light = BpyObj.Find("Light").locate(y=-5)
+    light.obj.data.energy = 5000
+    
+    camera = BpyObj.Find("Camera").rotate(90,0,0).locate(0,-10,5)
+    camera.obj.data.lens = 25
+
+    bw.cycles(32, False, Rect(1080, 1080))
+    bw.background(0)
+
+    bw.scene.view_settings.look = "Very High Contrast"
+
 @b3d_animation(timeline=60, center=(0, 1), upright=1)
 def varfont2(f):
     ct = (Glyphwise("COLD\nTYPE", lambda g:
