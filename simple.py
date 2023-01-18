@@ -14,4 +14,4 @@ def simple(f):
         .pen()
         .tag("letters")
         .ch(b3d(lambda bp: bp
-            .extrude(f.e("eeio", r=(0.25, 5))))))
+            .extrude(f.e("eeio", r=(0.1, 1))))))
