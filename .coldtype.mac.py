@@ -1,1 +1,1 @@
-BLENDER_APP_PATH = "~/Desktop/Blenders/Blender3.1.app"
+#BLENDER_APP_PATH = "~/Desktop/Blenders/Blender3.4.app"
